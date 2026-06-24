@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lovely Creamyy</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&family=Reenie+Beanie&family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="floating-hearts" id="hearts-container"></div>
+    <div class="sparkles"></div>
+
+    <div class="phone-container">
+
+        <div class="screen active" id="screen-lock">
+            <div class="envelope-wrapper">
+                <div class="envelope">
+                    <div class="envelope-label">
+                        <div class="love-particles">
+                            <span>❤️</span>
+                            <span>💖</span>
+                            <span>💕</span>
+                       </div>
+                        
+                        <span class="label-sub">my everything ❤️</span>
+                    </div>
+    
+                    <div class="wax-seal">
+                        <div class="seal-inner">❤️</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="lock-section">
+                <div class="lock-icon">🔒<span class="lock-glow"></span></div>
+                <p class="lock-hint">ENTER THE SECRET WORD</p>
+                <input type="password" id="password-input" placeholder="• password •" autocomplete="off">
+                <button id="unlock-btn">Unlock 🔐</button>
+            </div>
+        </div>
+
+        <div class="screen" id="screen-intro">
+            <div class="floral-bg"></div>
+            <div class="intro-card">
+                <div class="love-line">"أجمل صدفة في حياتي كانت أنتِ ❤️"</div>
+                <div class="emoji-header">😍</div>
+                <p class="intro-text">
+                    حبيت أعمل هدية جديدة وعايزين نملاها صورنا بقى، بس قبل أي حاجة عايزك تعرفي إني بحبك وربنا يخليكي ليا يا قلبي.. ويلا بقى انبهري 😉❤️
+                </p>
+                <button class="next-btn" onclick="nextScreen('screen-timeline')">التالي ←</button>
+            </div>
+        </div>
+
+        <div class="screen" id="screen-timeline">
+            <div class="timeline-scrollable">
+                
+                <div class="timeline-header">
+                    <div class="timeline-glow"></div>
+                    <span class="heart-tag">💕 يحبك</span>
+                    <h2>💕 بدايتنا</h2>
+                    <p class="sub-date">سوا من  ✨ 22 • 02 • 2025 ✨</p>
+                    
+                    <div class="counter-grid">
+                        <div class="counter-item">
+                            <span class="num" id="count-days">000</span>
+                            <span class="unit">يوم</span>
+                        </div>
+                        <div class="counter-item">
+                            <span class="num" id="count-hours">00</span>
+                            <span class="unit">ساعة</span>
+                        </div>
+                        <div class="counter-item">
+                            <span class="num" id="count-minutes">00</span>
+                            <span class="unit">دقيقة</span>
+                        </div>
+                        <div class="counter-item">
+                            <span class="num" id="count-seconds">00</span>
+                            <span class="unit">ثانية</span>
+                        </div>
+                    </div>
+                    <p class="counter-foot">كل ثانية بتعدي وأنتِ في قلبي ❤️</p>
+                </div>
+
+                <div class="memory-section">
+                    <div class="memory-title-tag">يوم ما قولتلك بحبك ❤️</div>
+                    <div class="memory-date-badge">📅 ✨ 03 • 03 • 2025 ✨</div>
+                    
+                    <div class="image-card">
+                        <img src="c:\Users\taayime\OneDrive\Desktop\pic\WhatsApp Image 2026-06-24 at 12.21.56 PM.jpeg" alt="Memory 1">
+                        <div class="card-caption">بحبك</div>
+                    </div>
+
+                    <div class="image-card">
+                        <img src="c:\Users\taayime\OneDrive\Desktop\pic\WhatsApp Image 2026-06-24 at 12.44.02 PM.jpeg" alt="Memory 2">
+                        <div class="card-caption">ربنا يخليكي ليا</div>
+                    </div>
+
+                    <div class="image-card">
+                        <img src="c:\Users\taayime\OneDrive\Desktop\pic\WhatsApp Image 2026-06-24 at 12.44.00 PM.jpeg" alt="Memory 3">
+                       <div class="card-caption">فاكرة الهدية دي</div>
+                    </div>
+                    
+
+                    <div class="image-card">
+                        <img src="c:\Users\taayime\OneDrive\Desktop\pic\WhatsApp Image 2026-06-24 at 12.44.54 PM.jpeg" alt="Memory 4">
+                        <div class="card-caption">ودي</div>
+                    </div>
+
+                    <div class="image-card">
+                        <img src="c:\Users\taayime\OneDrive\Desktop\pic\WhatsApp Image 2026-06-24 at 12.29.15 PM.jpeg" alt="Memory 5">
+                        <div class="card-caption">❤️ يوم مايتنسيش</div>
+                    </div>
+                </div>
+
+                <button class="next-btn" onclick="nextScreen('screen-final')">التالي ←</button>
+            </div>
+        </div>
+
+        <div class="screen" id="screen-final">
+            <div class="final-card">
+                <div class="floating-heart">💖</div>
+                <div class="final-text-box">
+                    <p class="main-love">بحبك أوي ❤️</p>
+                    <p>ربنا يخليكي ليا</p>
+                    <p class="small-note">وعايزين بقى نملاه صور كتير متتنسيش 😂</p>
+                </div>
+                <button class="memories-btn" onclick="nextScreen('screen-timeline')"><span class="icon">🌸</span> ذكرياتنا</button>
+                <div class="footer-tag">Lovely</div>
+            </div>
+        </div>
+
+        <div class="music-player" id="global-player">
+            <div class="player-right">
+                <img src="https://images.unsplash.com/photo-1518199266791-5375a83190b7?w=50" class="album-art" id="album-rot" alt="Album Art">
+                <div class="track-info">
+                    <span class="track-name">Dave - Raindance🎶أ</span>
+                    <span class="track-index">جاري التشغيل دائماً •••</span>
+                </div>
+            </div>
+            <div class="player-controls">
+                <button id="play-pause-btn">▶️</button>
+            <div> 
+                <audio id="bg-music" loop preload="auto">
+    <source src="11478127b0674c1f8998ad389eaa4f5f.MOV" type="audio/mpeg">
+</audio>
+            </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

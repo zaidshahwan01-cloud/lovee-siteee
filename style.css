@@ -1,0 +1,520 @@
+/* إعدادات المتصفح الافتراضية المريحة */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Tajawal', 'Cairo', sans-serif;
+    -webkit-tap-highlight-color: transparent;
+}
+
+body {
+    background: linear-gradient(135deg, #ffe5ec 0%, #ffc2d1 50%, #ffb3c6 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    perspective: 1000px;
+}
+
+/* حاوية الهاتف الذكي الراقية */
+.phone-container {
+    width: 100%;
+    max-width: 412px;
+    height: 90vh;
+    max-height: 850px;
+    background: rgba(255, 255, 255, 0.45);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 6px solid #ffffff;
+    border-radius: 40px;
+    box-shadow: 0 25px 50px rgba(255, 75, 110, 0.15), 
+                inset 0 0 20px rgba(255, 255, 255, 0.6);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+/* الشاشات والتنقل السلس */
+.screen {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(20px) scale(0.98);
+    transition: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 24px;
+    z-index: 1;
+}
+
+.screen.active {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0) scale(1);
+    z-index: 2;
+}
+
+/* 1. تصميم شاشة القفل والمظروف */
+.envelope-wrapper {
+    margin-top: 40px;
+    perspective: 1000px;
+}
+
+.envelope {
+    width: 280px;
+    height: 180px;
+    background: #d9c4b2;
+    position: relative;
+    border-radius: 4px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* غطاء الظرف العلوي */
+.envelope::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 90px 140px 0 140px;
+    border-color: #cdb8a5 transparent transparent transparent;
+    z-index: 2;
+}
+
+/* البطاقة البيضاء */
+.envelope-label {
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    transform: translateX(-50%) rotate(-2deg);
+    width: 220px;
+    background: white;
+    padding: 15px;
+    border-radius: 5px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    z-index: 3;
+}
+
+.label-title {
+    font-size: 12px;
+    letter-spacing: 5px;
+    color: #999;
+    margin-bottom: 8px;
+}
+
+.label-sub {
+    font-size: 26px;
+    color: #d63447;
+    font-family: cursive;
+}
+
+/* الختم */
+.wax-seal {
+    position: absolute;
+    bottom: 18px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 4px solid #b83b5e;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    z-index: 5;
+}
+
+.wax-seal img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.seal-inner {
+    color: white;
+    font-size: 1.1rem;
+}
+
+/* عناصر الإدخال والأزرار الفخمة */
+.lock-section {
+    width: 100%;
+    max-width: 280px;
+    text-align: center;
+}
+
+.lock-icon {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    position: relative;
+}
+
+.lock-hint {
+    font-size: 0.85rem;
+    color: #ff477e;
+    letter-spacing: 1.5px;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+#password-input {
+    width: 100%;
+    padding: 14px 20px;
+    border: 2px solid rgba(255, 179, 198, 0.5);
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 25px;
+    outline: none;
+    text-align: center;
+    font-size: 1.1rem;
+    color: #ff477e;
+    transition: all 0.3s ease;
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.03);
+}
+
+#password-input:focus {
+    border-color: #ff477e;
+    box-shadow: 0 0 12px rgba(255, 71, 126, 0.2);
+    background: #ffffff;
+}
+
+#unlock-btn, .next-btn, .memories-btn {
+    width: 100%;
+    margin-top: 15px;
+    padding: 14px;
+    background: linear-gradient(45deg, #ff477e, #ff7096);
+    color: white;
+    border: none;
+    border-radius: 25px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 6px 15px rgba(255, 75, 110, 0.3);
+    transition: all 0.3s ease;
+}
+
+#unlock-btn:hover, .next-btn:hover, .memories-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(255, 75, 110, 0.4);
+}
+
+#unlock-btn:active, .next-btn:active, .memories-btn:active {
+    transform: translateY(1px);
+}
+
+/* 2. شاشة كارت الترحيب الرومانسي */
+.intro-card {
+    background: rgba(255, 255, 255, 0.75);
+    border-radius: 24px;
+    padding: 30px 20px;
+    text-align: center;
+    box-shadow: 0 15px 35px rgba(255, 75, 110, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.6);
+}
+
+.love-line {
+    font-size: 1.2rem;
+    color: #ff477e;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.emoji-header {
+    font-size: 3rem;
+    margin-bottom: 15px;
+    animation: bounce 2s infinite;
+}
+
+.intro-text {
+    font-size: 1.05rem;
+    color: #4a4a4a;
+    line-height: 1.8;
+    margin-bottom: 25px;
+}
+
+/* 3. شاشة العداد وقائمة الصور المتدفقة */
+.timeline-scrollable {
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+    padding-bottom: 100px; /* مسافة للمشغل */
+    scrollbar-width: none; /* إخفاء شريط التمرير لـ Firefox */
+}
+
+.timeline-scrollable::-webkit-scrollbar {
+    display: none; /* إخفاء شريط التمرير لـ Chrome/Safari */
+}
+
+.timeline-header {
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 20px;
+    padding: 20px;
+    text-align: center;
+    margin-bottom: 25px;
+    position: relative;
+    border: 1px solid rgba(255,255,255,0.5);
+}
+
+.heart-tag {
+    background: #ffe5ec;
+    color: #ff477e;
+    padding: 4px 12px;
+    border-radius: 15px;
+    font-size: 0.85rem;
+    font-weight: bold;
+}
+
+.timeline-header h2 {
+    color: #ff477e;
+    margin-top: 10px;
+}
+
+.sub-date {
+    font-size: 0.85rem;
+    color: #aeaeae;
+    margin-bottom: 15px;
+}
+
+/* شبكة العداد الاحترافية المريحة */
+.counter-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    margin: 15px 0;
+}
+
+.counter-item {
+    background: linear-gradient(135deg, #ffffff, #fff0f3);
+    border-radius: 12px;
+    padding: 10px 5px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.02);
+    border: 1px solid rgba(255, 179, 198, 0.2);
+}
+
+.counter-item .num {
+    display: block;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #ff477e;
+}
+
+.counter-item .unit {
+    font-size: 0.75rem;
+    color: #666;
+}
+
+.counter-foot {
+    font-size: 0.9rem;
+    color: #ff7096;
+    margin-top: 10px;
+}
+
+/* كروت الصور والذكريات الفخمة */
+.memory-section {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.memory-title-tag {
+    font-weight: bold;
+    color: #ff477e;
+    text-align: center;
+    font-size: 1.1rem;
+}
+
+.memory-date-badge {
+    text-align: center;
+    font-size: 0.85rem;
+    color: #777;
+    margin-top: -15px;
+    margin-bottom: 5px;
+}
+
+.image-card {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 10px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+    transform: rotate(var(--r, 0deg));
+    transition: transform 0.3s ease;
+}
+
+.image-card:nth-child(even) { --r: 1deg; }
+.image-card:nth-child(odd) { --r: -1deg; }
+
+.image-card:hover {
+    transform: rotate(0deg) scale(1.02);
+}
+
+.image-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+.card-caption {
+    text-align: center;
+    font-size: 1rem;
+    color: #4a4a4a;
+    margin-top: 8px;
+    font-weight: 500;
+}
+
+/* 4. الشاشة النهائية */
+.final-card {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 40px 25px;
+    border-radius: 24px;
+    box-shadow: 0 20px 40px rgba(255, 75, 110, 0.1);
+}
+
+.floating-heart {
+    font-size: 4rem;
+    animation: floatAnimation 3s ease-in-out infinite;
+}
+
+.final-text-box p {
+    font-size: 1.3rem;
+    color: #ff477e;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.final-text-box .small-note {
+    font-size: 0.95rem;
+    color: #666;
+    font-weight: normal;
+    margin-top: 15px;
+}
+
+.footer-tag {
+    margin-top: 30px;
+    font-family: 'Reenie Beanie', cursive;
+    font-size: 2.5rem;
+    color: #ff7096;
+}
+
+/* مشغل الموسيقى السفلي الفخم */
+.music-player {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-top: 1px solid rgba(255, 179, 198, 0.3);
+    padding: 12px 24px;
+    display: none; /* يتم إظهاره عبر السكريبت بعد فتح القفل */
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+.player-right {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.album-art {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #ff477e;
+}
+
+.track-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.track-name {
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: #ff477e;
+}
+
+.track-index {
+    font-size: 0.75rem;
+    color: #888;
+}
+
+#play-pause-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #ff477e;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 10px rgba(255, 75, 110, 0.3);
+}
+
+/* تأثير دوران الألبوم عند تشغيل الموسيقى */
+.rotating {
+    animation: rotateAlbum 8s linear infinite;
+}
+
+/* جزيئات القلوب المتطايرة في الخلفية العامة */
+.floating-hearts {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.heart-particle {
+    position: absolute;
+    color: rgba(255, 71, 126, 0.4);
+    animation: flyUp var(--d) linear infinite;
+    font-size: var(--s);
+}
+
+/* تأثيرات الأنيميشن (Animations) */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+@keyframes floatAnimation {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-15px) rotate(5deg); }
+}
+
+@keyframes rotateAlbum {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+@keyframes flyUp {
+    0% { transform: translateY(105vh) translateX(0) rotate(0deg); opacity: 1; }
+    100% { transform: translateY(-10vh) translateX(var(--x)) rotate(360deg); opacity: 0; }
+}
